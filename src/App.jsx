@@ -1,7 +1,14 @@
+import Navbar from "./components/Navbar";
+import Hero from "./components/Hero";
+import { useState } from "react";
+
+
 export default function App() {
+  const [score, setScore] = useState(0);
   return (
-    <h1 className="text-3xl font-bold underline">
-      Hello world!
-    </h1>
-  )
+    <section className="bg-[url('src/assets/background.jpg')] bg-no-repeat bg-cover flex flex-col">
+      <Navbar score={score} />
+      <Hero setScore={setScore} score={score} />
+    </section>
+  );
 }
